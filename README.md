@@ -16,7 +16,7 @@ Here's our official [AI Agent Example](https://github.com/membranehq/ai-agent-ex
 ### ⚙️ Installation
 
 ```bash
-git clone https://github.com/getmembrane/mcp-server.git
+git clone https://github.com/membranehq/mcp-server.git
 cd mcp-server
 npm install
 npm run build
@@ -118,7 +118,7 @@ With **dynamic mode** (`?mode=dynamic`), the server will only return **one tool*
 
 In dynamic mode, your implementation should figure out which tools are most relevant to the user's query. Once you've identified them, prompt the LLM to call the `enable-tools` tool with the appropriate list.
 
-Want to see how this works in practice? Check out our [AI Agent Example](https://github.com/getmembrane/ai-agent-example).
+Want to see how this works in practice? Check out our [AI Agent Example](https://github.com/membranehq/ai-agent-example).
 
 ```ts
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
@@ -184,7 +184,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 }
 ```
 
-This feature lets you use same session for a conversation. Check out our [AI Agent Example](https://github.com/getmembrane/ai-agent-example) to see how this works in practice.
+This feature lets you use same session for a conversation. Check out our [AI Agent Example](https://github.com/membranehq/ai-agent-example) to see how this works in practice.
 
 ### Configuring other MCP clients
 
