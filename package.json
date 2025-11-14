@@ -1,7 +1,7 @@
 {
   "name": "integration-app-mcp-server",
   "version": "1.3.0",
-  "description": "MCP server for all Integration App connections",
+  "description": "MCP server for all Membrane connections",
   "main": "dist/server/index.js",
   "scripts": {
     "start": "tsx src/server/index.ts",
@@ -14,10 +14,10 @@
   },
   "keywords": [
     "mcp",
-    "integration-app",
+    "membrane",
     "ai-agent"
   ],
-  "author": "Integration.app <support@integration.app>",
+  "author": "Membrane <support@getmembrane.com>",
   "license": "ISC",
   "dependencies": {
     "@integration-app/sdk": "^1.0.0",

@@ -84,7 +84,7 @@ export const createMcpServer = async ({
 }: CreateMcpServerParams) => {
   const mcpServer = new McpServer(
     {
-      name: 'Integration App MCP Server',
+      name: 'Membrane MCP Server',
       version: pkg.version,
       description: pkg.description,
     },
