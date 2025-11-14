@@ -6,7 +6,7 @@
 
 The Membrane MCP Server is a [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) server, it provides actions for connected integrations on Membrane as tools.
 
-Here's our official [AI Agent Example](https://github.com/getmembrane/ai-agent-example) that shows you how to use this MCP server in your application.
+Here's our official [AI Agent Example](https://github.com/membranehq/ai-agent-example) that shows you how to use this MCP server in your application.
 
 ### 📋 Prerequisites
 
