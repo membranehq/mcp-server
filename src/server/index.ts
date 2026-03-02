@@ -1,5 +1,6 @@
 import { sseRouter } from './routes/sse';
 import { streamableHttpRouter } from './routes/streamable-http';
+import { oauthRouter } from './routes/oauth';
 import express from 'express';
 import cors from 'cors';
 import { authMiddleware } from './middlewares/auth';
@@ -36,10 +37,13 @@ app.use(morgan(customMorganFormat));
 app.get('/', (req, res) => {
   console.log('Health check endpoint called ');
   res.status(200).send(
-    `MCP Server is running. 
+    `MCP Server is running.
      Use / sse endpoint for SSE connections and / mcp endpoint for streamable HTTP connections`
   );
 });
+
+// OAuth metadata and authorize proxy (handles multi-scope normalization)
+app.use(oauthRouter);
 
 // Legacy SSE endpoints with auth
 app.use('/sse', authMiddleware, sseRouter);
