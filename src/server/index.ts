@@ -51,6 +51,6 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(
-    `⚡️ Integration App MCP Server is running on port ${PORT} ENV: ${process.env.NODE_ENV}`
+    `⚡️ Membrane MCP Server is running on port ${PORT} ENV: ${process.env.NODE_ENV}`
   );
 });

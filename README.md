@@ -1,22 +1,22 @@
-# Integration App MCP Server
+# Membrane MCP Server
 
-<a href="https://integration.app/">
+<a href="https://getmembrane.com/">
   <img width="1148" alt="Screenshot 2025-07-07 at 23 03 05" src="https://github.com/user-attachments/assets/39f6cc74-a689-4657-91f3-ee8358c05e31" />
 </a>
 
-The Integration App MCP Server is a [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) server, it provides actions for connected integrations on Integration.app membrane as tools.
+The Membrane MCP Server is a [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) server, it provides actions for connected integrations on Membrane as tools.
 
-Here's our official [AI Agent Example](https://github.com/integration-app/ai-agent-example) that shows you how to use this MCP server in your application.
+Here's our official [AI Agent Example](https://github.com/membranehq/ai-agent-example) that shows you how to use this MCP server in your application.
 
 ### 📋 Prerequisites
 
 - Node.js (v18 or higher)
-- An [Integration.app](https://integration.app) account
+- A [Membrane](https://getmembrane.com) account
 
 ### ⚙️ Installation
 
 ```bash
-git clone https://github.com/integration-app/mcp-server.git
+git clone https://github.com/membranehq/mcp-server.git
 cd mcp-server
 npm install
 npm run build
@@ -51,8 +51,8 @@ Deploy your own instance of this MCP server to any cloud hosting service of your
 The project includes a Dockerfile for easy containerized deployment.
 
 ```bash
-docker build -t integration-app-mcp-server .
-docker run -p 3000:3000 integration-app-mcp-server
+docker build -t membrane-mcp-server .
+docker run -p 3000:3000 membrane-mcp-server
 ```
 
 ### 🔗 Connecting to the MCP server
@@ -66,7 +66,7 @@ This MCP server support two transports:
 
 ### 🔐 Authentication
 
-Provide an [Integration.app access token](https://docs.integration.app/docs/authentication#access-token) via query or `Authorization` header:
+Provide a [Membrane access token](https://docs.getmembrane.com/docs/authentication#access-token) via query or `Authorization` header:
 
 ```http
 ?token=ACCESS_TOKEN
@@ -118,14 +118,14 @@ With **dynamic mode** (`?mode=dynamic`), the server will only return **one tool*
 
 In dynamic mode, your implementation should figure out which tools are most relevant to the user's query. Once you've identified them, prompt the LLM to call the `enable-tools` tool with the appropriate list.
 
-Want to see how this works in practice? Check out our [AI Agent Example](https://github.com/integration-app/ai-agent-example).
+Want to see how this works in practice? Check out our [AI Agent Example](https://github.com/membranehq/ai-agent-example).
 
 ```ts
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 
 const client = new Client({
-  name: 'example-integration-app-mcp-client',
+  name: 'example-membrane-mcp-client',
   version: '1.0.0',
 });
 
@@ -184,7 +184,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 }
 ```
 
-This feature lets you use same session for a conversation. Check out our [AI Agent Example](https://github.com/integration-app/ai-agent-example) to see how this works in practice.
+This feature lets you use same session for a conversation. Check out our [AI Agent Example](https://github.com/membranehq/ai-agent-example) to see how this works in practice.
 
 ### Configuring other MCP clients
 
@@ -195,7 +195,7 @@ To use this server with Cursor, update the `~/.cursor/mcp.json` file:
 ```json
 {
   "mcpServers": {
-    "integration-app": {
+    "membrane": {
       "url": "https://<HOSTED_MCP_SERVER_URL>/sse?token={ACCESS_TOKEN}"
     }
   }
@@ -211,7 +211,7 @@ To use this server with Claude, update the config file (Settings > Developer > E
 ```json
 {
   "mcpServers": {
-    "integration-app": {
+    "membrane": {
       "url": "https://<HOSTED_MCP_SERVER_URL>/sse?token={ACCESS_TOKEN}"
     }
   }
@@ -220,6 +220,6 @@ To use this server with Claude, update the config file (Settings > Developer > E
 
 ### 🔧 Troubleshooting
 
-- Ensure your access token is valid and you're generating it according to [these instructions](https://docs.integration.app/docs/authentication#access-token)
+- Ensure your access token is valid and you're generating it according to [these instructions](https://docs.getmembrane.com/docs/authentication#access-token)
 - Check the MCP server logs for any errors or issues during startup or connection attempts.
 - Use the [MCP Inspector](https://www.npmjs.com/package/@modelcontextprotocol/inspector) for testing and debugging
